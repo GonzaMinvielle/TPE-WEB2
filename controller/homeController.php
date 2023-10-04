@@ -1,20 +1,17 @@
 <?php
 
-class ProductoController
+class HomeController
 {
-    private $model;
+
     private $view;
 
     function __construct()
     {
-        $this->model = new ProductoModel();
-
-        $this->view = new ProductoView();
+        $this->view = new HomeView();
     }
 
     function showHome()
     {
-
         $this->view->showHome();
     }
 }
