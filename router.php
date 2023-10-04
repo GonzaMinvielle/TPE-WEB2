@@ -1,23 +1,36 @@
-
 <?php
-require_once "./controller/producto_controller.php";
-require_once "./controller/categoria_controller.php";
+require_once './controller/producto_controller.php';
 
 
-$partesURL = explode('/', $_GET['action']);
-$controller = new producto_controller();
-$controllerEdit = new categoria_controller();
+// leemos la accion que viene por parametro
 
+$action = 'home'; // acción por defecto
 
-if ($partesURL[0] == '') {
-    $controller->home();
-} else {
-    if ($partesURL[0] == 'agregar') {
-        $controller->agregarNoticia();
-    } elseif ($partesURL[0] == 'borrar') {
-        $controller->borrarNoticia($partesURL[1]);
-    } elseif ($partesURL[0] == 'editar') {
-        $controllerEdit->editarNoticia($partesURL[1]);
-    }
+//Variable Controller
+$controllerProduct = new ProductoController();
+
+// si viene definida la reemplazamos
+if (!empty($_GET['action'])) {
+    $action = $_GET['action'];
 }
-?>
+
+// parsea la accion Ej: dev/juan --> ['dev', juan]
+$params = explode('/', $action);
+
+// determina que camino seguir según la acción
+switch ($params[0]) {
+    case 'home':
+        $this->$controllerProduct->showHome();
+        break;
+    case 'producto':
+        $this->$controllerProduct->showProduct();
+        break;
+    case 'about':
+        $id = null;
+        if (isset($params[1])) $id = $params[1];
+        $this->$controllerProduct->showAbout($id);
+        break;
+    default:
+        echo ('404 Page not found');
+        break;
+}
