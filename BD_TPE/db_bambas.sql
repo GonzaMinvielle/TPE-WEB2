@@ -57,6 +57,7 @@ CREATE TABLE `productos` (
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`),
   ADD KEY `id_categoria` (`id_categoria`);
+  /*comentario*/
 
 --
 -- Indexes for table `productos`
