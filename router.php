@@ -1,35 +1,37 @@
 <?php
-require_once './controller/producto_controller.php';
 
+/* require_once './controller/aboutController.php'; */
+require_once './controllers/homeController.php';
+/* require_once './controller/productController.php'; */
 
-// leemos la accion que viene por parametro
+//Instancias
 
-$action = 'home'; // acción por defecto
+/* $productsController = new ProductController(); */
+$homeController = new HomeController();
+/* $aboutController = new AboutController(); */
 
-//Variable Controller
-$controllerProduct = new ProductoController();
+// Parametros URL 
 
-// si viene definida la reemplazamos
+$action = 'home'; 
+
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// parsea la accion Ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-// determina que camino seguir según la acción
+// Tabla de Routeo
+
 switch ($params[0]) {
     case 'home':
-        $this->$controllerProduct->showHome();
+        $homeController->showHome();
         break;
-    case 'producto':
-        $this->$controllerProduct->showProduct();
-        break;
+    /* case 'producto':
+        $productsController->showProduct();
+        break;*/
     case 'about':
-        $id = null;
-        if (isset($params[1])) $id = $params[1];
-        $this->$controllerProduct->showAbout($id);
-        break;
+        $aboutController->showAbout($id);
+        break; 
     default:
         echo ('404 Page not found');
         break;
