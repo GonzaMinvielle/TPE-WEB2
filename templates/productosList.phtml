@@ -1,6 +1,8 @@
+<?php require 'templates/header.phtml' ?>;
 <ul class="list-group">
     <?php foreach ($productos as $producto) : ?>
 
-        <li> <?php $producto ?> </li>
+        <li> <?php echo $producto->name ?> </li>
     <?php endforeach ?>
 </ul>
+<?php require 'templates/footer.phtml' ?>;

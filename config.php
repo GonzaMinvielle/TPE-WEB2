@@ -6,8 +6,4 @@ class conexionDB
     {
         $this->db = new PDO('mysql:host=localhost;dbname=db_bambas;charset=utf8', 'root', '');
     }
-
-
-    // Consulta
-
 }
