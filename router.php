@@ -1,14 +1,14 @@
 <?php
 
+/* require_once './controller/productController.php'; */
 /* require_once './controller/aboutController.php'; */
 require_once './controllers/homeController.php';
-/* require_once './controller/productController.php'; */
 
 //Instancias
 
 /* $productsController = new ProductController(); */
-$homeController = new HomeController();
 /* $aboutController = new AboutController(); */
+$homeController = new HomeController();
 
 // Parametros URL 
 
