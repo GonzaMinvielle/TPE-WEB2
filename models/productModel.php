@@ -1,7 +1,7 @@
 <?php
 
+class ProductModel
 
-class ProductosModel
 {
     private $db;
 
@@ -11,8 +11,10 @@ class ProductosModel
     }
 
     public function getAll()
+
     {
         $query = $this->db->prepare("SELECT * FROM  productos");
+
         $query->execute();
 
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
@@ -21,9 +23,12 @@ class ProductosModel
     }
 
     public function get($id)
+
     {
         $query = $this->db->prepare("SELECT * FROM productos WHERE id = ?");
+
         $query->execute([$id]);
+
         $prducto = $query->fetch(PDO::FETCH_OBJ);
 
         return $prducto;

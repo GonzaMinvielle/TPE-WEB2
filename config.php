@@ -1,9 +1,15 @@
 <?php
-class conexionDB
+
+class DbConnect
+
 {
-    private $db;
-    function __construct()
+
+    public function connect()
     {
-        $this->db = new PDO('mysql:host=localhost;dbname=db_bambas;charset=utf8', 'root', '');
+        try {
+            return new PDO('mysql:host=localhost;dbname=db_bambas;charset=utf8', 'root', '');
+        } catch (PDOException $e) {
+            exit('Database error');
+        }
     }
 }

@@ -1,32 +1,17 @@
 <?php
-<<<<<<< HEAD
-require_once './controller/producto_controller.php';
-require_once './controller/aboutController.php';
-require_once './controller/homeController.php';
+require_once './controllers/productController.php';
+require_once './controllers/aboutController.php';
+require_once './controllers/homeController.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 // leemos la accion que viene por parametro
-=======
 
-/* require_once './controller/productController.php'; */
-/* require_once './controller/aboutController.php'; */
-require_once './controllers/homeController.php';
-
-//Instancias
->>>>>>> ccc0d695140f57f2b8b64496f0dad71ea6770c40
-
-/* $productsController = new ProductController(); */
 /* $aboutController = new AboutController(); */
 $homeController = new HomeController();
+$productController = new ProductController();
 
-<<<<<<< HEAD
-// si viene definida la reemplazamos
-=======
-// Parametros URL 
+$action = 'home';
 
-$action = 'home'; 
-
->>>>>>> ccc0d695140f57f2b8b64496f0dad71ea6770c40
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -37,29 +22,18 @@ $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'home':
-<<<<<<< HEAD
-        $controller = new HomeController();
-        $this->$controller->showHome();
-        break;
-    case 'producto':
-        $controller = new productosController();
-        $this->$controller->showAllProductos();
-=======
         $homeController->showHome();
->>>>>>> ccc0d695140f57f2b8b64496f0dad71ea6770c40
+        break;
+    case 'productos':
+        $productController->showAllProductos();
         break;
     /* case 'producto':
         $productsController->showProduct();
         break;*/
-    case 'about':
-<<<<<<< HEAD
+    /* case 'about':
         $controller = new AboutController();
         $this->$controller->showAbout();
-        break;
-=======
-        $aboutController->showAbout($id);
-        break; 
->>>>>>> ccc0d695140f57f2b8b64496f0dad71ea6770c40
+        break; */
     default:
         echo ('404 Page not found');
         break;

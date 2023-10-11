@@ -2,7 +2,7 @@
 
 require_once './libs/Smarty.class.php';
 
-class HomeView{
+class AboutView{
 
     private $smarty;
 
