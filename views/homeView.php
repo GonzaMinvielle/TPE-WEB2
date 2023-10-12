@@ -7,7 +7,7 @@ class HomeView
     public function showHome()
 
     {
-       echo "Este seria el home";
+       require'./templates/home.phtml';
     }
 
    /*  public function showError($error)

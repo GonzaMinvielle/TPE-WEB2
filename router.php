@@ -8,7 +8,7 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 
 /* $aboutController = new AboutController(); */
 $homeController = new HomeController();
-$productController = new ProductController();
+$menuController = new MenuController();
 
 $action = 'home';
 
@@ -24,8 +24,8 @@ switch ($params[0]) {
     case 'home':
         $homeController->showHome();
         break;
-    case 'productos':
-        $productController->showAllProductos();
+    case 'menu':
+        $menuController->showMenu();
         break;
     /* case 'producto':
         $productsController->showProduct();

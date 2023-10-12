@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 :root{
 
     --dark: rgb(28, 28, 28);
@@ -6,19 +10,338 @@
     --white: rgb(229, 229, 229);
     --orn: rgb(230, 149, 0);
     --darko: rgb(182, 118, 0);
+    
+}
+
+.font-principal{
+    font-family: 'Mohave';
+}
+
+.font-secondary{
+    font-family: 'Oswald';
+}
+
+.font-else{
+    font-family: 'PT Sans';
+}
+
+body{
+    margin: 0;
 }
 
 header{
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 150px;
+    gap: 5%;
+
+    height: 120px;
+    padding: 15px 2% 10px 2%;
+
     background-color: var(--dark);
+
+    /* box-shadow: -1px 8px 25px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 8px 25px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 8px 25px 1px rgba(0,0,0,0.75); */
 
 }
 
 header a{
     text-decoration: none;
+    color: var(--light);
+    font-family: 'Oswald';
+    font-size: 22px;
+    margin: 20px;
+}
+
+header a:hover{
+    text-decoration: underline;
+    
+}
+
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.title{
+    font-family: 'Mohave';
+    font-size:45px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--orn);
+    margin: 0;
+}
+
+.title-pic{
+    max-height: 80px;
+    margin-bottom: 20px;
+}
+
+.title-pic:hover{
+    rotate: 10deg;
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+}
+
+.login{
+    position: absolute;
+    right: 5%;
+}
+
+.login a{
+
+    background-color: transparent;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    padding: 15px;
+
+    font-family: 'Mohave';
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--light);
+}
+
+.login a:hover{
+    background-color: var(--gray);
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: 0.3s;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    
+    background: rgb(28,28,28);
+    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(23,23,23,1) 7%, rgba(23,23,23,1) 93%, rgba(28,28,28,1) 100%);
+}
+
+.home img{
+    height: 100%;
+}
+
+.home-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    height: 100%;
+    padding-left: 4vw;
+
+    font-family: 'Oswald';
+    font-size: 80px;
+    font-style: italic;
+    color: var(--white);
+
+}
+
+.home-info p {
+    margin-bottom: 40px;
+}
+
+.home-info p span{
+    color: orange;
+}
+
+.home-info button{
+    background-color: var(--orn);
+    padding: 15px;
+    border-radius: 8px;
+    border: 0;
+    margin-left: 1%;
+    
+    width: 180px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: var(--dark);
+}
+
+.home-info button:hover{
+    background-color: rgb(213, 213, 213);
+    transition: 0.3s;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background: rgb(15, 15, 15);
+}
+
+.menu{
+    flex-direction: column;
+}
+
+.categories-list{
+    width: 880px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: var(--dark);
+    font-family: 'Mohave';
+    text-transform: uppercase;
+}
+
+.categories-list a{
+    text-decoration: none;
     color: var(--gray);
+}
+
+.categories-list a:hover{
+    text-decoration: underline;
+}
+
+.categories-list a:active{
+    color: var(--orn);
+}
+
+.products{
+    width: 880px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    margin: 20px 0vw 45px 0vw;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 200px;
+    height: 300px;
+
+    border-radius: 15px;
+    border: 1px solid white;
+
+    background-color: var(--white);
+
+    font-family: 'PT Sans';
+    font-size: 11px;
+
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
+}
+
+.price{
+    display: none;
+    background-color: red;
+
+    border-radius: 5px;
+    padding: 10px;
+
+    position:absolute;
+    right: 0;
+    z-index: 2;
+}
+
+
+.card img{
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 55%;
+    border-radius: 15px 15px 0px 0px;
+    object-fit: cover;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+
+    height: 50%;
+    width: 90%;
+}
+
+.card-info h1{
+    font-family: 'Ubuntu';
+    margin-bottom: 4px;
+}
+
+.card-info p{
+    width: 100%;
+    color: rgb(108, 108, 108);
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card button{
+    background-color: orange;
+    padding: 5px 0px;
+    border-radius: 7px;
+    border: 2px solid rgb(255, 149, 0);
+    width: 90%;
+    margin-bottom: 10px;
+    color:var(--dark);
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.card button:hover{
+    background-color: var(--gray);
+    border: 2px solid var(--light);
+    color: var(--light);
+    transition: 0.3s;
+}
+
+footer{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 5%;
+
+    padding: 5% 4% 3% 4%;
+
+    background-color: var(--dark);
+}
+
+footer div img{
+    margin-bottom: 30%;
+    color: var(--white);
+    max-height: 70px;
+    max-width: 70px;
+}
+
+footer div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+footer div a{
+    text-decoration: none;
+    color: var(--gray);
+    font-family: 'Oswald';
+    font-size: 22px;
+    margin: 5px;
+}
+
+iframe{
+    border: 3px solid var(--orn) !important;
+    border-radius: 10px;
 }

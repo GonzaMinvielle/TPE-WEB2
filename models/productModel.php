@@ -10,28 +10,28 @@ class ProductModel
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_bambas;charset=utf8', 'root', '');
     }
 
-    public function getAll()
+    public function getAllProducts()
 
     {
         $query = $this->db->prepare("SELECT * FROM  productos");
 
         $query->execute();
 
-        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+        $products = $query->fetchAll(PDO::FETCH_OBJ);
 
-        return $productos;
+        return $products;
     }
 
-    public function get($id)
+    public function getProduct($id)
 
     {
         $query = $this->db->prepare("SELECT * FROM productos WHERE id = ?");
 
         $query->execute([$id]);
 
-        $prducto = $query->fetch(PDO::FETCH_OBJ);
+        $product = $query->fetch(PDO::FETCH_OBJ);
 
-        return $prducto;
+        return $product;
     }
     
 }

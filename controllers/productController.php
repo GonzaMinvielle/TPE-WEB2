@@ -1,22 +1,27 @@
 <?php
 require_once './views/productView.php';
 require_once './models/productModel.php';
-class ProductController
+require_once './models/categoriesModel.php';
+
+class MenuController
 {
     private $view;
-    private $model;
+    private $pmodel;
+    private $cmodel;
 
     function __construct()
     {
-        $this->model = new ProductModel;
+        $this->cmodel = new CategoriesModel;
+        $this->pmodel = new ProductModel;
         $this->view = new ProductView;
     }
 
 
-    function showAllProductos()
+    function showMenu()
 
     {
-        $products = $this->model->getAll();
-        $this->view->showAllProducts($products);
+        $categories = $this->cmodel->getAllCategories();
+        $products = $this->pmodel->getAllProducts();
+        $this->view->showMenu($categories,$products);
     }
 }

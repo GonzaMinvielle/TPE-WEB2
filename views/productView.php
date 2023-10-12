@@ -4,8 +4,9 @@ class ProductView
 {
 
 
-    public function showAllProducts($products)
+    
+    public function showMenu($categories,$products)
     {
-        require './templates/productosList.phtml';
+        require './templates/menu.phtml';
     }
 }
