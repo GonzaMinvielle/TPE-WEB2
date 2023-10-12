@@ -12,14 +12,11 @@ class ProductController
         $this->view = new ProductView;
     }
 
-    // function showProduct()
-    //{
-    //  $this->view->showProduct;
-    //}
 
     function showAllProductos()
+
     {
         $products = $this->model->getAll();
-        $this->view->showAllProductos($products);
+        $this->view->showAllProducts($products);
     }
 }

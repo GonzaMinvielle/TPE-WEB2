@@ -4,7 +4,7 @@ class ProductView
 {
 
 
-    public function showAllProductos($products)
+    public function showAllProducts($products)
     {
         require './templates/productosList.phtml';
     }

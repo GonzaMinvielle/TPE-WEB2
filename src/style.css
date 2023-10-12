@@ -1,0 +1,24 @@
+:root{
+
+    --dark: rgb(28, 28, 28);
+    --gray: gray;
+    --light: rgb(204, 204, 204);
+    --white: rgb(229, 229, 229);
+    --orn: rgb(230, 149, 0);
+    --darko: rgb(182, 118, 0);
+}
+
+header{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background-color: var(--dark);
+
+}
+
+header a{
+    text-decoration: none;
+    color: var(--gray);
+}
