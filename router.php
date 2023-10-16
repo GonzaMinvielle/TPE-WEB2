@@ -27,11 +27,11 @@ switch ($params[0]) {
         $homeController->showHome();
         break;
     case 'menu':
-        if(!isset($params[1]))
-        $menuController->showMenu();
-    else{
-        $menuController->showProductsByCategory($params[1]);
-    }
+        if (!isset($params[1]))
+            $menuController->showMenu();
+        else {
+            $menuController->showProductsByCategory($params[1]);
+        }
         break;
     case 'admin':
         $adminController->showLogIn();
