@@ -24,13 +24,14 @@ class MenuController
     {
         $categories = $this->cmodel->getAllCategories();
         $products = $this->pmodel->getAllProducts();
-        $this->view->showMenu($categories,$products);
+        $this->view->showMenu($categories, $products);
     }
 
-    function showProductsByCategory($id){
+    function showProductsByCategory($id)
+    {
         $categories = $this->cmodel->getAllCategories();
         $products = $this->pmodel->getProductsByCategory($id);
-        if($products){
+        if ($products) {
             $this->view->showProductsByCategory($products);
         } else {
             $this->view->showError("No hay trabajos, sector no encontrado.");
