@@ -1,14 +1,10 @@
 <?php
-require_once './controllers/productController.php';
+require_once './controllers/menuController.php';
 require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
+require_once './controllers/adminController.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
-// leemos la accion que viene por parametro
-
-/* $aboutController = new AboutController(); */
-$homeController = new HomeController();
-$menuController = new MenuController();
 
 $action = 'home';
 
@@ -18,6 +14,12 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 
+
+$aboutController = new AboutController();
+$homeController = new HomeController();
+$menuController = new MenuController();
+$adminController = new AdminController();
+
 // Tabla de Routeo
 
 switch ($params[0]) {
@@ -25,15 +27,18 @@ switch ($params[0]) {
         $homeController->showHome();
         break;
     case 'menu':
+        if(!isset($params[1]))
         $menuController->showMenu();
+    else{
+        $menuController->showProductsByCategory($params[1]);
+    }
         break;
-    /* case 'producto':
-        $productsController->showProduct();
-        break;*/
-    /* case 'about':
-        $controller = new AboutController();
-        $this->$controller->showAbout();
-        break; */
+    case 'admin':
+        $adminController->showLogIn();
+        break;
+    case 'about':
+        $aboutController->showAbout();
+        break;
     default:
         echo ('404 Page not found');
         break;

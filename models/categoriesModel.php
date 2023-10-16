@@ -14,13 +14,17 @@ class CategoriesModel
     public function getAllCategories()
 
     {
-        $query = $this->db->prepare("SELECT * FROM  categoria");
+        $query = $this->db->prepare("SELECT * FROM categoria");
 
         $query->execute();
 
-        $categories = $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_OBJ);;
+    }
 
-        return $categories;
+    function getCategoryById($id){
+        $query = $this->db->prepare('SELECT * FROM categoria WHERE id = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 
     

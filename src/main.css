@@ -308,6 +308,68 @@ section{
     transition: 0.3s;
 }
 
+.login-bg{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(to right, #434343 0%, rgb(32, 32, 32) 100%);
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+
+    background-color: var(--gray);
+    gap: 15px;
+}
+
+.login-container input{
+    width: 80%;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    font-family: 'Ubuntu';
+}
+
+.login-container img{
+    width: 90px;
+    margin: 10px 0px;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-buttons button{
+    padding: 10px 20px;
+}
+
+.close-login{
+    color: var(--dark);
+    background-color: var(--white);
+    border-radius: 7px;
+    border: 0px;
+}
+
+.continue-login{
+    color: var(--dark);
+    background-color: var(--orn);
+    border-radius: 7px;
+    border: 2px solid rgb(255, 136, 45);
+}
+
 footer{
     display: flex;
     align-items: start;
