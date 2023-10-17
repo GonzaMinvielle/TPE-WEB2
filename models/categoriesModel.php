@@ -22,8 +22,11 @@ class CategoriesModel
     }
 
     function getCategoryById($id){
-        $query = $this->db->prepare('SELECT * FROM categoria WHERE id = ?');
+
+        $query = $this->db->prepare('SELECT categoria.name FROM categoria WHERE categoria.id_category = ?');
+
         $query->execute([$id]);
+
         return $query->fetch(PDO::FETCH_OBJ);
     }
 

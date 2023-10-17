@@ -27,13 +27,15 @@ class MenuController
         $this->view->showMenu($categories,$products);
     }
 
-    function showProductsByCategory($id){
-        $categories = $this->cmodel->getAllCategories();
+    function showProductsByCategory($id)
+    
+    {
+        $category = $this->cmodel->getCategoryById($id);
         $products = $this->pmodel->getProductsByCategory($id);
         if($products){
-            $this->view->showProductsByCategory($products);
+            $this->view->showCategory($category,$products);
         } else {
-            $this->view->showError("No hay trabajos, sector no encontrado.");
+            $this->view->showError();
         }
     }
 }
