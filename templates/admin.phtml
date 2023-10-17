@@ -20,10 +20,6 @@
 
                 <img src=" <?php echo $product->picture ?>" alt="">
 
-                <div class="price">
-                    <p><?php echo $product->price ?></p>
-                </div>
-
                 <div class="card-info">
                     <h1 style="overflow: hidden;
                                text-overflow: ellipsis;
@@ -32,7 +28,9 @@
                         <?php echo $product->name ?>
 
                     </h1>
-                    <p><?php echo $product->description ?></p>
+                    <p style=" white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;"><?php echo $product->description ?></p>
                 </div>
 
                 <div class="login-buttons">
