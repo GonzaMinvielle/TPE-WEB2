@@ -2,17 +2,8 @@
 
 <section class="administracion" style="display:flex;flex-direction:column;">
 
-    <h1 style="text-align: left;width: 80%;color:white;font-family:'Mohave';font-style:italic;font-size:35px;">ADMINISTRACION</h1>
-    <div class="items" style="width:80vw;display:flex;flex-direction:row;gap:20px;overflow-x:scroll;padding:15px">
-        <!-- <ul>
-            <?php foreach ($categories as $category => $value) : ?>
-                <li>
-                    <p><?php echo $category->name ?></p>
-                    <button><span class="material-symbols-outlined">edit</span></button>
-                    <button type="delete"><span class="material-symbols-outlined">delete</span></button>
-                </li>
-            <?php endforeach ?>
-        </ul> -->
+    <h1 style="text-align: left;width: 80%;color:white;font-family:'Mohave';font-style:italic;font-size:35px;"> ADMINISTRACION </h1>
+    <div class="items" style="width:80vw;display:flex;flex-direction:row;gap:40px;overflow-x:scroll;padding:35px">
 
         <?php foreach ($products as $product) : ?>
 
@@ -29,8 +20,12 @@
 
                     </h1>
                     <p style=" white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;"><?php echo $product->description ?></p>
+                               overflow: hidden;
+                               text-overflow: ellipsis;">
+                        
+                        <?php echo $product->description ?>
+
+                    </p>
                 </div>
 
                 <div class="login-buttons">
@@ -42,7 +37,7 @@
         <?php endforeach ?>
 
     </div>
-    <div class="addform" style="width:80vw;display:flex;flex-direction:column;margin:20px">
+    <div class="addform" style="width:80vw;display:flex;flex-direction:column;margin:50px">
         <h1 style="text-align: left;width: 80%;color:white;font-family:'Mohave';font-style:italic;font-size:35px;">Agregar un producto</h1>
         <form action="" class="" style="display: flex;flex-direction:column;gap:20px;width:400px;">
             <input type="text" placeholder="Nombre del Producto" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
@@ -58,7 +53,7 @@
             <input type="text" placeholder="Precio" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
             <input type="textarea" placeholder="Descripcion" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
             <input type="text" placeholder="Fotografia (URL)" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
-            <button type="submit" style="background-color: orange; width:140px;padding:15px;border-radius:5px"> Confirmar </button>
+            <button type="submit" style="background-color: orange; width:140px;padding:15px;border-radius:5px;border:0;"> Confirmar </button>
         </form>
     </div>
 </section>
