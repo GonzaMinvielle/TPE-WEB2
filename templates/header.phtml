@@ -15,19 +15,21 @@
 
     <header>
         <div>
-            <img src="./src/hamburguer.png" alt="" class="title-pic">
+            <a href="home"><img src="./src/hamburguer.png" alt="" class="title-pic"></a>
             <p class="title">BAMBA'S</p>
 
-            <a href="http://localhost/WEB2/TPE-WEB2/menu">Menu </a>
-            <a href="http://localhost/WEB2/TPE-WEB2/about">Acerca de nosotros</a>
+            <a href="http://localhost/dashboard/WEB2/TPE-WEB2/menu">Menu </a>
+            <a href="http://localhost/dashboard/WEB2/TPE-WEB2/about">Acerca de nosotros</a>
 
 
         </div>
         <div class="login">
-            <a href="http://localhost/WEB2/TPE-WEB2/login">INICIAR SESION</a>
+            <a href="http://localhost/dashboard/WEB2/TPE-WEB2/login">INICIAR SESION</a>
+            <a type="button" href="register" class="btn btn-info">Registrarse</a>
+
             <?php if (isset($_SESSION['USER_ID']) && ($_SESSION['LOGGED'] == true) && ($_SESSION['USER_EMAIL'] == 'webadmin')) : ?>
 
-                <a type="button" href="http://localhost/WEB2/TPE-WEB2/logout">CERRAR SESION <?php echo $_SESSION['USER_EMAIL'] ?></a>
+                <a type="button" href="http://localhost/dashboard/WEB2/TPE-WEB2/logout">CERRAR SESION </a>
             <?php endif ?>
         </div>
     </header>

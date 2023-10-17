@@ -22,10 +22,12 @@ class AuthHelper
 
     public static function logout()
     {
-
+        //inicio la session
+        //AuthHelper::init();
+        //session_start();
+        //destruyo la session
         session_destroy();
-        die();
-        header('Location :' . BASE_URL . 'home');
+        header('Location: ' . BASE_URL);
     }
 
     public static function verify()

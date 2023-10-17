@@ -10,4 +10,8 @@ class AuthView
     {
         require_once './templates/error.phtml';
     }
+    public function register()
+    {
+        require './templates/formRegister.phtml';
+    }
 }

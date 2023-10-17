@@ -8,7 +8,7 @@ class AboutController
 
     public function __construct()
     {
-        session_start();
+
         $this->view = new AboutView();
     }
 

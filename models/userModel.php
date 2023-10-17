@@ -22,13 +22,22 @@ class UserModel
         return $email;
     }
 
-    function hashPassword()
+    public function registeredUser($user, $password)
     {
-        $passHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $email = $_POST['email'];
 
-        $this->db->prepare("INSERT INTO `administrador`(`password`, 'email') VALUES ('[$passHash]', '");
+        $query = $this->db->prepare('INSERT INTO administrador ( email , password) VALUES (? , ?)');
 
-        return $passHash;
+        $query->execute([$user, $password]);
+    }
+    public function loggedUser($email)
+    {
+
+        $query = $this->db->prepare('SELECT * FROM administrador WHERE email = ?');
+
+        $query->execute([$email]);
+
+        $user = $query->fetch(PDO::FETCH_OBJ);
+
+        return $user;
     }
 }

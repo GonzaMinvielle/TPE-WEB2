@@ -30,6 +30,15 @@ switch ($params[0]) {
     case 'home':
         $homeController->showHome();
         break;
+    case 'register':
+        $authController->showRegister();
+        break;
+    case 'registered':
+        $authController->registered();
+        break;
+    case 'logged':
+        $authController->logged();
+        break;
     case 'menu':
         if (!isset($params[1]))
             $menuController->showMenu();
@@ -37,11 +46,7 @@ switch ($params[0]) {
             $menuController->showProductsByCategory($params[1]);
         }
         break;
-    case 'auth':
-        $authController->auth();
-        break;
     case 'login':
-
         $adminController->showLogin();
         break;
     case 'logout':

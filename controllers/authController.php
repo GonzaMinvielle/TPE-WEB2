@@ -16,25 +16,42 @@ class AuthController
         $this->model = new UserModel;
     }
 
-    public function auth()
+    public function registered()
     {
-        $email = $_POST['email'];
+        //si no esta vacio ningun campo, agarro los datos del form
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $user = $_POST['email'];
+            //hasheo la contraseña 
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            //guardo el usuario y el hash del password en la base de datos
+            $this->model->registeredUser($user, $password);
+            header("Location:" . BASE_URL);
+        } else {
+            //si no lo redirijo al home
+            header("Location:" . BASE_URL);
+        }
+    }
+    public function logged()
+    {
+        $user = $_POST['email'];
         $password = $_POST['password'];
+        if (!empty($user) || !empty($password)) {
+            //si no estan vacios los datos, busco el usuario
+            $userDB = $this->model->getUserByEmail($user);
 
-        if (!empty($email) && !empty($password)) {
-
-
-            $user = $this->model->getUserByEmail($email);
-
-            if ($user && password_verify($password, $user->password)) {
-                AuthHelper::login($user);
-                echo 'asdasd';
-                header('Location: ' . BASE_URL . 'home');
-                return;
+            //verifico si las credenciales son validas
+            if ($userDB && password_verify($password, $userDB->password)) {
+                //si son validas, logueo al usuario
+                AuthHelper::login($userDB);
+                header("Location:" . BASE_URL . 'admin');
             } else {
-                $this->view->showError('Falta completar datos');
-                return;
+                $this->view->showError('El usuario y a contraseña no coinciden con los datos de la DB');
             }
         }
+    }
+
+    public function showRegister()
+    {
+        $this->view->register();
     }
 }
