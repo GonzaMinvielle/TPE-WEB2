@@ -27,6 +27,13 @@ class MenuController
         $this->view->showMenu($categories, $products);
     }
 
+    function showProduct($id)
+
+    {
+        $product = $this->pmodel->getProductById($id);
+        $this->view->showProduct($product);
+    }
+
     function showProductsByCategory($id)
     
     {

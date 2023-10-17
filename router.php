@@ -33,6 +33,9 @@ switch ($params[0]) {
             $menuController->showProductsByCategory($params[1]);
         }
         break;
+    case 'producto':
+            $menuController->showProduct($params[1]);
+        break;
     case 'login':
         $adminController->showLogin();
         break;

@@ -14,9 +14,19 @@
 
 <body>
 
-    <section class="product">
+    <section style="width:100vw;height:100vh;">
 
-        
+        <div style="display: flex;flex-direction:row;gap:40px">
+            <div style="display:flex;flex-direction:column">
+                <img src="<?php echo $product->picture ?>" alt="" style="border-radius:10px;width:400px;height:400px">
+            </div>
+            <div style="border-left:1px solid gray;padding:40px;width:400px">
+                <h1 style="font-family:'Ubuntu';color:white;font-size:35px"><?php echo $product->name ?></h1>
+                <h2 style="font-family:'Ubuntu' ;color:white;">$<?php echo $product->price ?></h2>
+                <p style="font-family:'Ubuntu';color:white;"><?php echo $product->description ?></p>
+                <button>Comprar</button>
+            </div>
+        </div>
 
     </section>
 

@@ -10,6 +10,11 @@ class ProductView
         require './templates/menu.phtml';
     }
 
+    public function showProduct($product)
+    {
+        require './templates/product.phtml';
+    }
+    
     public function showCategory($category,$products)
     {
         require './templates/category.phtml';
