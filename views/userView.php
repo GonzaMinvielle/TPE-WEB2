@@ -2,8 +2,8 @@
 
 class UserView
 {
-    
-    public function showLogIn()
+
+    public function showLogin()
     {
         require './templates/login.phtml';
     }
