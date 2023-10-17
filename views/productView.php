@@ -4,8 +4,8 @@ class ProductView
 {
 
 
-    
-    public function showMenu($categories,$products)
+
+    public function showMenu($categories, $products)
     {
         require './templates/menu.phtml';
     }
@@ -20,5 +20,4 @@ class ProductView
     {
         require './templates/error.phtml';
     }
-
 }

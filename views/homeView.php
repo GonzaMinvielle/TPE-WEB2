@@ -1,13 +1,20 @@
 <?php
 
-class HomeView
+require_once './libs/Smarty.class.php';
 
+class HomeView
 {
 
-    public function showHome()
+    private $smarty;
 
+    public function __construct()
     {
-       require'./templates/home.phtml';
+        $this->smarty = new Smarty();
     }
 
+
+    public function showHome()
+    {
+        $this->smarty->display('./templates/home.tpl');
+    }
 }

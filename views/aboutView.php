@@ -2,17 +2,19 @@
 
 require_once './libs/Smarty.class.php';
 
-class AboutView{
+class AboutView
+{
 
     private $smarty;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->smarty = new Smarty();
     }
 
 
-    public function showAbout(){
+    public function showAbout()
+    {
         $this->smarty->display('./templates/about.tpl');
     }
-
 }

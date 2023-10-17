@@ -24,7 +24,7 @@ class MenuController
     {
         $categories = $this->cmodel->getAllCategories();
         $products = $this->pmodel->getAllProducts();
-        $this->view->showMenu($categories,$products);
+        $this->view->showMenu($categories, $products);
     }
 
     function showProductsByCategory($id)
