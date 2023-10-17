@@ -1,0 +1,27 @@
+<?php require 'templates/header.phtml' ?>
+
+<section class="menu">
+
+    <div class="products">
+
+        <?php foreach ($products as $product) : ?>
+
+            <div class="card">
+                <img src=" <?php echo $product->picture ?>" alt="">
+                <div class="price">
+                    <p><?php echo $product->price ?></p>
+                </div>
+
+                <div class="card-info">
+                    <h1><?php echo $product->name ?></h1>
+                    <p><?php echo $product->description ?></p>
+
+                </div>
+                <button>Comprar</button>
+            </div>
+
+        <?php endforeach ?>
+
+    </div>
+</section>
+<?php require 'templates/footer.phtml' ?>

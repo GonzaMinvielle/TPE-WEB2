@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<?php include('./controllers/adminController.php') ?>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="<?php echo BASE_URL ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/burguer.png">
+    <link rel="stylesheet" href="src/main.css">
+    <title>Bamba's Burguer</title>
+</head>
+
+<body>
+    <div class="login-bg">
+        <div class="login-container">
+            <img src="src/hamburguer-mono.png" alt="">
+            <form action="<?php $action ?>" method="post">
+                <input name="email" type="text" placeholder="Usuario o Email">
+                <input name="password" type="password" placeholder="Contraseña">
+                <div class="login-buttons">
+                    <button class="close-login"><a href="http://localhost/WEB2/TPE-WEB2/home">Atras</a></button>
+                    <button type="submit" class="continue-login">
+                        Ingresar</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
