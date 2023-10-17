@@ -246,18 +246,12 @@ section{
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
+    transition: 0.3s;
 }
 
-.price{
-    display: none;
-    background-color: red;
-
-    border-radius: 5px;
-    padding: 10px;
-
-    position:absolute;
-    right: 0;
-    z-index: 2;
+.card:hover{
+   scale: 1.1;
+   transition: 0.3s;
 }
 
 
@@ -287,9 +281,6 @@ section{
     width: 100%;
     color: rgb(108, 108, 108);
     height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .card button{

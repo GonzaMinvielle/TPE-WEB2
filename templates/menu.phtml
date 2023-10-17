@@ -4,26 +4,22 @@
 
     <div class="categories-list">
         <?php foreach ($categories as $category) : ?>
-            <a href="http://localhost/dashboard/TPE-WEB2/menu <?php echo $category->id_category ?>"> <?php echo $category->name ?> </a>
+            <a href="http://localhost/dashboard/TPE-WEB2/menu/<?php echo $category->id_category ?>"> <?php echo $category->name ?> </a>
         <?php endforeach ?>
     </div>
     <div class=" products">
 
         <?php foreach ($products as $product) : ?>
-
+            <a style="text-decoration: none; color:black" href="http://localhost/dashboard/TPE-WEB2/producto/<?php echo $product->id?> ">
             <div class="card">
                 <img src=" <?php echo $product->picture ?>" alt="">
-                <div class="price">
-                    <p><?php echo $product->price ?></p>
-                </div>
-
                 <div class="card-info">
                     <h1><?php echo $product->name ?></h1>
                     <p><?php echo $product->description ?></p>
 
                 </div>
-                <button>Comprar</button>
             </div>
+            </a>
 
         <?php endforeach ?>
 

@@ -12,7 +12,7 @@ class ProductView
 
     public function showCategory($category,$products)
     {
-        require './templates/categoria.phtml';
+        require './templates/category.phtml';
     }
 
 

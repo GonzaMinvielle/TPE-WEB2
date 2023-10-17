@@ -1,7 +1,6 @@
 <?php
 include("./config.php");
 require_once './controllers/menuController.php';
-//require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
 require_once './controllers/userController.php';
 
@@ -37,8 +36,8 @@ switch ($params[0]) {
     case 'login':
         $adminController->showLogin();
         break;
-    case 'about':
-        $aboutController->showAbout();
+    case 'nosotros':
+        $homeController->showAbout();
         break;
     case 'admin':
         $adminController->showAdmin();
