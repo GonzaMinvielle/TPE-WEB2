@@ -30,4 +30,15 @@ class CategoriesModel
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
+
+    function deleteCategory($id){
+        $query = $this->db->prepare('DELETE FROM categoria WHERE id_category  = ?');
+        $query->execute([$id]);
+    }
+
+    function editCategory($id,$name){
+        $query = $this->db->prepare('UPDATE categoria SET id_category = ? , name = ?  WHERE id_category = ?');
+        $query->execute([$id,$name]);
+    }
+
 }

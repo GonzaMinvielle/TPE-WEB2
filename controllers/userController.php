@@ -2,28 +2,39 @@
 
 require_once './views/UserView.php';
 require_once './models/adminModel.php';
-require_once './helpers/authHelper.php';
+require_once './models/productModel.php';
 
-class AdminController
+class UserController
+
 {
     private $view;
     private $model;
+    private $pmodel;
 
 
     function __construct()
     {
         $this->view = new UserView;
         $this->model = new UserModel;
+        $this->pmodel = new ProductModel;
     }
+    
     public function showLogin()
     {
         $this->view->showLogin();
     }
 
+    public function showAdmin()
+    
+    {
+        $products= $this->pmodel->getAllProducts();
+        $this->view->showAdmin($products);
+    }
+
     public function auth()
     {
         $email = $_POST['email'];
-        $password = $$_POST['password'];
+        $password = $_POST['password'];
 
         if (empty($email) || empty($password)) {
             $this->view->showLogin('Faltan completar datos');

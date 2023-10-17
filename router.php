@@ -3,7 +3,7 @@ include("./config.php");
 require_once './controllers/menuController.php';
 //require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
-require_once './controllers/adminController.php';
+require_once './controllers/userController.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -19,7 +19,7 @@ $params = explode('/', $action);
 
 $homeController = new HomeController();
 $menuController = new MenuController();
-$adminController = new AdminController();
+$adminController = new UserController();
 
 // Tabla de Routeo
 
@@ -40,6 +40,10 @@ switch ($params[0]) {
     case 'about':
         $aboutController->showAbout();
         break;
+    case 'admin':
+        $adminController->showAdmin();
+        break;
+break;
     default:
         echo ('404 Page not found');
         break;
