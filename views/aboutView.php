@@ -1,8 +1,8 @@
 <?php
 
-require_once './libs/Smarty.class.php';
 
-class AboutView
+
+/*class AboutView
 {
 
     private $smarty;
@@ -17,4 +17,4 @@ class AboutView
     {
         $this->smarty->display('./templates/about.tpl');
     }
-}
+}*/
