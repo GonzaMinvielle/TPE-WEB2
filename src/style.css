@@ -102,6 +102,7 @@ header div{
     font-size: 15px;
     text-decoration: none;
     color: var(--light);
+    
 }
 
 .login a:hover{
@@ -406,4 +407,13 @@ footer div a{
 iframe{
     border: 3px solid var(--orn) !important;
     border-radius: 10px;
+}
+
+.error-login {
+    padding: 200px;
+    font-family: 'Oswald';
+    text-align: center ;
+    color : white;
+   background: rgb(28,28,28);
+   background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(23,23,23,1) 7%, rgba(23,23,23,1) 93%, rgba(28,28,28,1) 100%);
 }

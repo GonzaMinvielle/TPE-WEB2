@@ -22,7 +22,7 @@ class ProductModel
         return $products;
     }
 
-    public function getProduct($id)
+    public function getProductById($id)
 
     {
         $query = $this->db->prepare("SELECT * FROM productos WHERE id = ?");
@@ -46,5 +46,9 @@ class ProductModel
         $product = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $product;
+    }
+
+    function deploy()
+    {
     }
 }

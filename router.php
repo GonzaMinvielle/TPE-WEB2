@@ -1,6 +1,7 @@
 <?php
+include("./config.php");
 require_once './controllers/menuController.php';
-require_once './controllers/aboutController.php';
+//require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
 require_once './controllers/adminController.php';
 
@@ -15,7 +16,7 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 
-$aboutController = new AboutController();
+
 $homeController = new HomeController();
 $menuController = new MenuController();
 $adminController = new AdminController();
@@ -33,8 +34,8 @@ switch ($params[0]) {
             $menuController->showProductsByCategory($params[1]);
         }
         break;
-    case 'admin':
-        $adminController->showLogIn();
+    case 'login':
+        $adminController->showLogin();
         break;
     case 'about':
         $aboutController->showAbout();

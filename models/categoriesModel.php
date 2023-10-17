@@ -1,5 +1,6 @@
 <?php
 
+
 class CategoriesModel
 
 {
@@ -29,7 +30,4 @@ class CategoriesModel
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
-
-    
-    
 }

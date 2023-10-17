@@ -11,7 +11,7 @@ class UserModel
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_bambas;charset=utf8', 'root', '');
     }
 
-    function getUser($email)
+    function getUserByEmail($email)
     {
         $query = $this->db->prepare('SELECT * FROM administrador WHERE email = ?');
 
