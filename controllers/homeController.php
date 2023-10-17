@@ -2,15 +2,19 @@
 
 require_once './views/homeView.php';
 
-class HomeController {
+class HomeController
+{
 
     private $view;
 
-    function __construct() {
+    function __construct()
+    {
+        session_start();
         $this->view = new HomeView();
     }
 
-    function showHome() {
+    function showHome()
+    {
         $this->view->showHome();
     }
 }

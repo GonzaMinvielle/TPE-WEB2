@@ -417,3 +417,12 @@ iframe{
    background: rgb(28,28,28);
    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(23,23,23,1) 7%, rgba(23,23,23,1) 93%, rgba(28,28,28,1) 100%);
 }
+.about{
+    padding: 200px;
+    font-family: 'Oswald';
+    text-align: center ;
+    color : white;
+   background: rgb(28,28,28);
+   background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(23,23,23,1) 7%, rgba(23,23,23,1) 93%, rgba(28,28,28,1) 100%);
+
+}

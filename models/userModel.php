@@ -17,6 +17,18 @@ class UserModel
 
         $query->execute([$email]);
 
-        return $query->fetch(PDO::FETCH_OBJ);
+        $email = $query->fetch(PDO::FETCH_OBJ);
+
+        return $email;
+    }
+
+    function hashPassword()
+    {
+        $passHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $email = $_POST['email'];
+
+        $this->db->prepare("INSERT INTO `administrador`(`password`, 'email') VALUES ('[$passHash]', '");
+
+        return $passHash;
     }
 }
