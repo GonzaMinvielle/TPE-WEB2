@@ -57,4 +57,9 @@ class ProductModel
         $query = $this->db->prepare('UPDATE productos SET id = ? , productos.name = ? , tipo = ? , productos.category_id = ? , price = ? , descrption = ? , picture = ? WHERE id_category = ?');
         $query->execute([$id,$name]);
     }
+
+    function addProduct($id,$name,$category,$category_id,$price,$desc,$url){
+        $query = $this->db->prepare('INSERT INTO productos ( id , productos.name , tipo , productos.category_id , price , descrption , picture) VALUES (?,?,?,?,?,?)');
+        $query->execute([$id,$name]);
+    }
 }

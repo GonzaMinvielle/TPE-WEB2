@@ -37,7 +37,12 @@ class CategoriesModel
     }
 
     function editCategory($id,$name){
-        $query = $this->db->prepare('UPDATE categoria SET id_category = ? , name = ?  WHERE id_category = ?');
+        $query = $this->db->prepare('UPDATE categoria SET id_category = ? , productos.name = ?  WHERE id_category = ?');
+        $query->execute([$id,$name]);
+    }
+
+    function addCategory($id,$name){
+        $query = $this->db->prepare('INSERT INTO categoria ( id_cateory , productos.name ) VALUES (?,?)');
         $query->execute([$id,$name]);
     }
 
