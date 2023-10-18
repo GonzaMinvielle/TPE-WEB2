@@ -48,7 +48,18 @@ class ProductModel
         return $product;
     }
 
-    function deploy()
-    {
+    function deletePorduct($id){
+        $query = $this->db->prepare('DELETE FROM productos WHERE id = ?');
+        $query->execute([$id]);
+    }
+
+    function editProduct($id,$name,$category,$category_id,$price,$desc,$url){
+        $query = $this->db->prepare('UPDATE productos SET id = ? , productos.name = ? , tipo = ? , productos.category_id = ? , price = ? , descrption = ? , picture = ? WHERE id_category = ?');
+        $query->execute([$id,$name,$category,$category_id,$price,$desc,$url]);
+    }
+
+    function addProduct($id,$name,$category,$category_id,$price,$desc,$url){
+        $query = $this->db->prepare('INSERT INTO productos ( id , productos.name , tipo , productos.category_id , price , descrption , picture) VALUES (?,?,?,?,?,?)');
+        $query->execute([$id,$name]);
     }
 }

@@ -230,6 +230,8 @@ section{
     flex-direction: column;
     align-items: center;
 
+
+    min-width: 200px;
     width: 200px;
     height: 300px;
 
@@ -244,24 +246,18 @@ section{
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.78);
+    transition: 0.3s;
 }
 
-.price{
-    display: none;
-    background-color: red;
-
-    border-radius: 5px;
-    padding: 10px;
-
-    position:absolute;
-    right: 0;
-    z-index: 2;
+.card:hover{
+   scale: 1.1;
+   transition: 0.3s;
 }
 
 
 .card img{
     height: 100%;
-    width: 100%;
+    width: 200px;
     max-width: 100%;
     max-height: 55%;
     border-radius: 15px 15px 0px 0px;
@@ -285,10 +281,8 @@ section{
     width: 100%;
     color: rgb(108, 108, 108);
     height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
+
 .card button{
     background-color: orange;
     padding: 5px 0px;
@@ -357,12 +351,19 @@ section{
     padding: 10px 20px;
 }
 
+
 .close-login{
+    
     color: var(--dark);
     background-color: var(--white);
     border-radius: 7px;
     border: 0px;
 }
+
+button a{
+    text-decoration:none ;
+    }
+
 
 .continue-login{
     color: var(--dark);
@@ -370,6 +371,7 @@ section{
     border-radius: 7px;
     border: 2px solid rgb(255, 136, 45);
 }
+
 
 footer{
     display: flex;
@@ -418,7 +420,7 @@ iframe{
    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(23,23,23,1) 7%, rgba(23,23,23,1) 93%, rgba(28,28,28,1) 100%);
 }
 .about{
-    padding: 200px;
+    
     font-family: 'Oswald';
     text-align: center ;
     color : white;

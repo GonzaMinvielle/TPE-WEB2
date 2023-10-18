@@ -40,4 +40,8 @@ class UserModel
 
         return $user;
     }
+    function updateProduct($name, $description, $price, $id) {    
+        $query = $this->db->prepare('UPDATE productos SET name = ?, description = ?, price = ? WHERE id = ?');
+        $query->execute([$name, $description, $price, $id]);
+    }
 }

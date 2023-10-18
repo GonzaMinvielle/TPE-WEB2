@@ -1,0 +1,61 @@
+<?php include 'templates/header.phtml' ?>
+
+<section class="administracion" style="display:flex;flex-direction:column;">
+
+    <h1 style="text-align: left;width: 80%;color:white;font-family:'Mohave';font-style:italic;font-size:35px;"> ADMINISTRACION </h1>
+    <div class="items" style="width:80vw;display:flex;flex-direction:row;gap:40px;overflow-x:scroll;padding:35px">
+
+        <?php foreach ($products as $product) : ?>
+
+            <div class="card">
+
+                <img src=" <?php echo $product->picture ?>" alt="">
+
+                <div class="card-info">
+                    <h1 style="overflow: hidden;
+                               text-overflow: ellipsis;
+                               white-space: nowrap;">
+
+                        <?php echo $product->name ?>
+
+                    </h1>
+                    <p style=" white-space: nowrap;
+                               overflow: hidden;
+                               text-overflow: ellipsis;">
+
+                        <?php echo $product->description ?>
+
+                    </p>
+                </div>
+
+                <div class="login-buttons">
+                    <a href="http://localhost/dashboard/WEB2/TPE-WEB2/editar/<?php echo $product->id ?>"><button><span class="material-symbols-outlined">edit</span></button></a>
+                    <a href="http://localhost/dashboard/WEB2/TPE-WEB2/delete/<?php echo $product->id ?>"><button><span class="material-symbols-outlined">delete</span></button></a>
+                </div>
+
+            </div>
+        <?php endforeach ?>
+
+    </div>
+    <div class="addform" style="width:80vw;display:flex;flex-direction:column;margin:50px">
+        <h1 style="text-align: left;width: 80%;color:white;font-family:'Mohave';font-style:italic;font-size:35px;">Agregar un producto</h1>
+        <form action="" class="" style="display: flex;flex-direction:column;gap:20px;width:400px;">
+            <input type="text" placeholder="Nombre del Producto" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+            <input type="text" placeholder="Categoria" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+            <select name="" id="" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+                <option value="1">Hamburguesa</option>
+                <option value="2">Vegetariano</option>
+                <option value="3">Combo</option>
+                <option value="4">Bebida</option>
+                <option value="5">Papas</option>
+                <option value="6">Postre</option>
+            </select>
+            <input type="text" placeholder="Precio" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+            <input type="textarea" placeholder="Descripcion" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+            <input type="text" placeholder="Fotografia (URL)" style="padding: 10px;background-color:white;border:1px solid white;border-radius:5px">
+            <button type="submit" style="background-color: orange; width:140px;padding:15px;border-radius:5px;border:0;"> Confirmar </button>
+        </form>
+    </div>
+</section>
+
+<?php include 'templates/footer.phtml' ?>

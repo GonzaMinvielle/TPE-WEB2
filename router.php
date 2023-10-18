@@ -3,7 +3,7 @@ include("./config.php");
 require_once './controllers/menuController.php';
 require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
-require_once './controllers/adminController.php';
+require_once './controllers/userController.php';
 require_once './controllers/authController.php';
 require_once './helpers/authHelper.php';
 
@@ -21,7 +21,7 @@ $params = explode('/', $action);
 $authController = new AuthController();
 $homeController = new HomeController();
 $menuController = new MenuController();
-$adminController = new AdminController();
+$userController = new UserController();
 $authHelper = new AuthHelper();
 
 // Tabla de Routeo
@@ -39,6 +39,10 @@ switch ($params[0]) {
     case 'logged':
         $authController->logged();
         break;
+    case 'editar':
+        $userController->showUpdate($params[1]);
+        break;
+
     case 'menu':
         if (!isset($params[1]))
             $menuController->showMenu();
@@ -46,8 +50,11 @@ switch ($params[0]) {
             $menuController->showProductsByCategory($params[1]);
         }
         break;
+    case 'producto':
+        $menuController->showProduct($params[1]);
+        break;
     case 'login':
-        $adminController->showLogin();
+        $userController->showLogin();
         break;
     case 'logout':
         $authHelper->logout();
@@ -56,6 +63,10 @@ switch ($params[0]) {
         $aboutController = new AboutController();
         $aboutController->showAbout();
         break;
+    case 'admin':
+        $userController->showAdmin();
+        break;
+
     default:
         echo ('404 Page not found');
         break;

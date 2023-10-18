@@ -17,4 +17,9 @@ class HomeController
     {
         $this->view->showHome();
     }
+
+    function showAbout() {
+        $this->view->showAbout();
+    }
+
 }

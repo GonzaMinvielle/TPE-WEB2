@@ -1,27 +1,66 @@
-<?php require 'templates/header.phtml' ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="menu">
+<head>
+    <meta charset="UTF-8">
+    <base href="<?php echo BASE_URL ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="./src/burguer.png">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Bamba's Burguer</title>
+</head>
 
-    <div class="products">
+<body>
 
-        <?php foreach ($products as $product) : ?>
+    <header>
+        <div>
+            <img src="./src/hamburguer.png" alt="" class="title-pic">
+            <p class="title">BAMBA'S</p>
+        </div>
+        <div>
+            <a href="http://localhost/dashboard/WEB2/TPE-WEB2/menu">Menu</a>
+            <a href="http://localhost/dashboard/WEB2/TPE-WEB2/about">Nosotros</a>
+        </div>
 
-            <div class="card">
-                <img src=" <?php echo $product->picture ?>" alt="">
-                <div class="price">
-                    <p><?php echo $product->price ?></p>
-                </div>
+        <div class="login">
+            <a href="http://localhost/dashboard/TPE-WEB2/login">INICIAR SESION</a>
+        </div>
 
-                <div class="card-info">
-                    <h1><?php echo $product->name ?></h1>
-                    <p><?php echo $product->description ?></p>
+    </header>
 
-                </div>
-                <button>Comprar</button>
-            </div>
+    <section class="menu">
 
-        <?php endforeach ?>
 
-    </div>
-</section>
-<?php require 'templates/footer.phtml' ?>
+
+        <div class="categories-list" style="justify-content: center;">
+            <a href="http://localhost/dashboard/TPE-WEB2/menu"> <span class="material-symbols-outlined">
+                    arrow_back
+                </span></a>
+            <a href="http://localhost/dashboard/TPE-WEB2/menu/<?php echo $category->id_category ?>"> <?php echo $category->name ?> </a>
+        </div>
+        <div class=" products">
+
+            <?php foreach ($products as $product) : ?>
+                <a style="text-decoration: none; color:black" href="http://localhost/dashboard/TPE-WEB2/producto/<?php echo $product->id ?> ">
+                    <div class="card">
+                        <img src=" <?php echo $product->picture ?>" alt="">
+                        <div class="card-info">
+                            <h1><?php echo $product->name ?></h1>
+                            <p><?php echo $product->description ?></p>
+
+                        </div>
+                    </div>
+                </a>
+
+            <?php endforeach ?>
+
+        </div>
+    </section>
+
+    <?php require 'templates/footer.phtml' ?>
+
+</body>
+
+</html>

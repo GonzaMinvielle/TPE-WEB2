@@ -1,4 +1,4 @@
-<?php require 'templates/header.phtml' ?>
+<?php include 'templates/header.phtml' ?>
 
 <section class="menu">
 
@@ -10,20 +10,16 @@
     <div class=" products">
 
         <?php foreach ($products as $product) : ?>
+            <a style="text-decoration: none; color:black" href="http://localhost/dashboard/WEB2/TPE-WEB2/producto/<?php echo $product->id ?> ">
+                <div class="card">
+                    <img src=" <?php echo $product->picture ?>" alt="">
+                    <div class="card-info">
+                        <h1><?php echo $product->name ?></h1>
+                        <p><?php echo $product->description ?></p>
 
-            <div class="card">
-                <img src=" <?php echo $product->picture ?>" alt="">
-                <div class="price">
-                    <p><?php echo $product->price ?></p>
+                    </div>
                 </div>
-
-                <div class="card-info">
-                    <h1><?php echo $product->name ?></h1>
-                    <p><?php echo $product->description ?></p>
-
-                </div>
-                <button>Comprar</button>
-            </div>
+            </a>
 
         <?php endforeach ?>
 
