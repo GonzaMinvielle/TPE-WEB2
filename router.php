@@ -1,10 +1,11 @@
 <?php
-include("./config.php");
+
 require_once './controllers/menuController.php';
 require_once './controllers/aboutController.php';
 require_once './controllers/homeController.php';
 require_once './controllers/userController.php';
 require_once './controllers/authController.php';
+require_once './controllers/adminController.php';
 require_once './helpers/authHelper.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -17,7 +18,7 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 
-
+$adminController =  new AdminController();
 $authController = new AuthController();
 $homeController = new HomeController();
 $menuController = new MenuController();
@@ -39,8 +40,11 @@ switch ($params[0]) {
     case 'logged':
         $authController->logged();
         break;
+
+    case 'addProduct':
+        $adminController->addProduct();
     case 'editar':
-        $userController->showUpdate($params[1]);
+        $adminController->showAllUpdatedProduct($params[1]);
         break;
 
     case 'menu':
@@ -58,6 +62,9 @@ switch ($params[0]) {
         break;
     case 'logout':
         $authHelper->logout();
+        break;
+    case 'delete':
+        $userController->deleteProductById($params[1]);
         break;
     case 'about':
         $aboutController = new AboutController();

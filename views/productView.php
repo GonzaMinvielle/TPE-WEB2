@@ -14,8 +14,8 @@ class ProductView
     {
         require './templates/product.phtml';
     }
-    
-    public function showCategory($category,$products)
+
+    public function showCategory($category, $products)
     {
         require './templates/category.phtml';
     }
@@ -24,5 +24,10 @@ class ProductView
     public function showError()
     {
         require './templates/error.phtml';
+    }
+    public function showUpdate($product)
+
+    {
+        require './templates/editar.phtml';
     }
 }

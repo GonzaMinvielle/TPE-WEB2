@@ -1,12 +1,14 @@
 <?php
 
 require_once './views/UserView.php';
+require_once './views/ProductView.php';
 require_once './models/userModel.php';
 require_once './helpers/authHelper.php';
 require_once './views/authView.php';
 class UserController
 {
     private $view;
+    private $pview;
     private $model;
     private $pmodel;
 
@@ -14,7 +16,7 @@ class UserController
 
     function __construct()
     {
-
+        $this->pview = new ProductView();
         $this->view = new UserView;
         $this->model = new UserModel;
         $this->pmodel = new ProductModel;
@@ -70,6 +72,11 @@ class UserController
 
     {
         $product = $this->pmodel->getProductById($id);
-        $this->view->showUpdate($product);
+        $this->pview->showUpdate($product);
+    }
+    public function deleteProductById($id)
+    {
+        $this->pmodel->deleteProductById($id);
+        header("Location:" . BASE_URL);
     }
 }

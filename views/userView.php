@@ -18,9 +18,5 @@ class UserView
     {
         require './templates/error.phtml';
     }
-    public function showUpdate($product)
 
-    {
-        require './templates/editar.phtml';
-    }
 }
