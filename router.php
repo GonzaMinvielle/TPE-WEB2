@@ -41,12 +41,6 @@ switch ($params[0]) {
         $authController->logged();
         break;
 
-    case 'addProduct':
-        $adminController->addProduct();
-    case 'editar':
-        $adminController->showAllUpdatedProduct($params[1]);
-        break;
-
     case 'menu':
         if (!isset($params[1]))
             $menuController->showMenu();
@@ -62,9 +56,6 @@ switch ($params[0]) {
         break;
     case 'logout':
         $authHelper->logout();
-        break;
-    case 'delete':
-        $userController->deleteProductById($params[1]);
         break;
     case 'about':
         $aboutController = new AboutController();

@@ -67,16 +67,4 @@ class UserController
 
         header('Location' . BASE_URL);
     }
-
-    public function showUpdate($id)
-
-    {
-        $product = $this->pmodel->getProductById($id);
-        $this->pview->showUpdate($product);
-    }
-    public function deleteProductById($id)
-    {
-        $this->pmodel->deleteProductById($id);
-        header("Location:" . BASE_URL);
-    }
 }
