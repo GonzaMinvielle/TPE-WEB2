@@ -1,0 +1,22 @@
+<?php
+require_once('templates/header.phtml'); ?>
+<form action="registered" method="POST">
+    <h2>Registrar:</h2>
+    <div class="login-bg">
+        <div class="login-container">
+            <img src="src/hamburguer-mono.png" alt="">
+            <label for="exampleInputEmail1">Usuario</label>
+            <input type="text" name="email" placeholder="Nombre de usuario">
+            <small id="emailHelp" class="form-text text-muted">No compartas el tu usuario con nadie.</small>
+
+
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña">
+
+
+
+            <button type="submit" class="continue-login">Registrarme</button>
+</form>
+</div>
+</div>
+<?php require_once('./templates/footer.phtml'); ?>
