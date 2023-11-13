@@ -44,6 +44,6 @@ class CategoriesModel
     function addCategory($id,$name){
         $query = $this->db->prepare('INSERT INTO categoria ( id_cateory , productos.name ) VALUES (?,?)');
         $query->execute([$id,$name]);
-    }
+    } 
 
 }
