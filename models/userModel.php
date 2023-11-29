@@ -17,7 +17,7 @@ class UserModel
 
         $query->execute([$email]);
 
-        $email = $query->fetch(PDO::FETCH_OBJ);
+        $email = $query->fetch(PDO::FETCH_OBJ); 
 
         return $email;
     }

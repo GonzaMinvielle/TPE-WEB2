@@ -51,7 +51,7 @@ class ProductModel
     public function deleteProductById($id)
     {
 
-        $query = $this->db->prepare('DELETE FROM products WHERE id=?');
+        $query = $this->db->prepare("DELETE FROM products WHERE 'id'=?");
         $query->execute([$id]);
         $product = $query->fetch(PDO::FETCH_OBJ);
         return $product;
